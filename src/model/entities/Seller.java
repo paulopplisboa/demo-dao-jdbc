@@ -9,7 +9,7 @@ public class Seller implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
-	private String nome;
+	private String name;
 	private String email;
 	private Date birthDate;
 	private Double baseSalary;
@@ -23,7 +23,7 @@ public class Seller implements Serializable {
 
 	public Seller(Integer id, String nome, String email, Date birthDate, Double baseSalary, Department dep) {
 		this.id = id;
-		this.nome = nome;
+		this.name = nome;
 		this.email = email;
 		this.birthDate = birthDate;
 		this.baseSalary = baseSalary;
@@ -38,12 +38,12 @@ public class Seller implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String nome) {
+		this.name = nome;
 	}
 
 	public String getEmail() {
@@ -69,13 +69,23 @@ public class Seller implements Serializable {
 	public void setBaseSalary(Double baseSalary) {
 		this.baseSalary = baseSalary;
 	}
+	
+	
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -93,17 +103,17 @@ public class Seller implements Serializable {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (nome == null) {
-			if (other.nome != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!nome.equals(other.nome))
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Seller [id=" + id + ", nome=" + nome + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
+		return "Seller [id=" + id + ", nome=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
 				+ baseSalary + ", dep=" + department + "]";
 	}
 	
